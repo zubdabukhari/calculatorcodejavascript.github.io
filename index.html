@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    
+    
+   
+    <div class="abc">
+        <table>
+            <tr>
+                <input type="text" name="" id="abc">
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="clearresult()"> C</button></td>
+                <td><button onclick="deletenum()">X</button></td>
+                <td><button onclick="number('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="number('7')">7</button></td>
+                <td><button onclick="number('8')">8</button></td>
+                <td><button onclick="number('9')">9</button></td>
+                <td><button onclick="number('*')">*</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="number('4')">4</button></td>
+                <td><button onclick="number('5')">5</button></td>
+                <td><button onclick="number('6')">6</button></td>
+                <td><button onclick="number('+')">+</button></td>
+            </tr>
+        
+        <tr>
+            <td><button onclick="number('1')">1</button></td>
+            <td><button onclick="number('2')">2</button></td>
+            <td><button onclick="number('3')">3</button></td>
+            <td><button onclick="number('-')">-</button></td>
+            
+        </tr>
+        <tr>
+            <td><button onclick="number('0')">0</button></td>
+            <td><button onclick="number('.')">.</button></td>
+            <td><button onclick="result()">=</button></td>
+            <td><button onclick="number('%')">%</button></td>
+        </tr>
+        </table>
+    </div>
+    <script>
+        // to get input
+function number(num){
+    var result=document.getElementById("abc");
+    result.value +=num;
+}
+
+// to get result
+function result()
+{
+    var result=document.getElementById("abc");
+    result.value=eval(result.value)
+}
+// clear result
+
+function clearresult()
+
+{
+    var result=document.getElementById("abc");
+    result.value="";
+
+}
+
+// del 
+
+function deletenum()
+{
+    var number=document.getElementById("abc");
+    var remove=number.value;
+    remove=remove.slice(0,-1)
+      //to remove last char from a string
+
+      number.value=remove;
+}
+    </script>
+</body>
+</html>
